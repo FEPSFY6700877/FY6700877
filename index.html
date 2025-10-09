@@ -169,7 +169,32 @@ classifier confidence to drop, as in Vlachos (2008).
   </p>
 
 
-  
+  <!DOCTYPE html>
+
+<head>
+  <title>Change Button Colour</title>
+</head>
+<body>
+  <button id="colorbutton">Click me to change colour</button>
+
+  <script>
+  //Get a reference to the button element
+  var button = document.getElementByld("colorbutton");
+
+  //Function to change the button color
+  function changeColour() {
+    //Generate a random color (hexadecimal)
+    var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+
+    //Set the button's background color to the random colour
+    button.style.backgroundColor = randomColor;
+}
+
+//Add a click event listener to the button
+button.addEventListener("click", changeColor);
+</script>
+</body>
+
 
     
 </html>
