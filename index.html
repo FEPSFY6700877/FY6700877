@@ -77,7 +77,7 @@
       }
     </style>
   </head>
-  <body>
+  <body id="body">
     <div style="text-align: center;">
       <!-- Banner image MUST be inside the body -->
       <img src="uoslogo.png" alt="banner" width="1200" height="300">
@@ -95,8 +95,8 @@
       <a href="#References">References</a>
     </nav>
 
-    <div>
-      <h3 id="Abstract" >Abstract</h3>
+    <div id="introduction">
+      <h3 id="Abstract">Abstract</h3>
       <pre class="ex1">
         The International Space Station (ISS) has been a staple of humanity's great achievements for nearly 30 years, however it is also the most expensive at an estimated $150 billion. 
         Meant only to last 15 years, it has been called into question as to why it is still being maintained at nearly $3 billion per year. Many plans for its decommissioning have been put forward, 
@@ -107,7 +107,7 @@
     </div>
     <hr>
     <h3 id="MainArticle">Main Article</h3>
-    <div class="two-col">
+    <div class="two-col" id="text">
       <div class="col">
         <h4>Beginnings and life in orbit</h4>
         <p>
@@ -131,7 +131,7 @@
         </p>
       </div>
     </div>
-    <!-- Comparison table -->
+    <!-- Plan comparison table -->
     <table>
       <thead>
         <tr>
@@ -170,29 +170,31 @@
         In 2013 Jeff Bezos recovered Apollo-era Saturn V engines from the Pacific Ocean — suggesting the ISS may also be recoverable in part.
       </p>
     </div>
-    <h3 id="References">References</h3>
-    <ol style="text-align: start;">
-      <li>https://www.nasa.gov/faqs-the-international-space-station-transition-plan/</li>
-      <li>https://www.nasa.gov/news-release/nasa-selects-international-space-station-us-deorbit-vehicle/</li>
-      <li>https://theconversation.com/nasa-will-say-goodbye-to-the-international-space-station-in-2030</li>
-      <li>https://issnationallab.org/about/iss-national-lab-overview/iss-history-timeline/</li>
-      <li>https://www.forbes.com/sites/quora/2018/10/24/how-difficult-is-it-to-keep-the-space-station-warm/</li>
-      <li>https://www.space.com/37830-jeff-bezos-apollo-rocket-engines-recovery.html</li>
-      <li>https://www.space.com/tiangong-space-station</li>
-      <li>https://www.nasa.gov/humans-in-space/commercial-space/leo-economy</li>
-      <li>https://www.space.com/spacex-dragon-cargo-capsule-boosts-iss</li>
-      <li>https://www.nasa.gov/international-space-station/space-station-facts-and-figures/</li>
-      <li>https://oceanservice.noaa.gov/facts/nemo.html</li>
-      <li>https://spacenews.com/enhanced-dragon-spacecraft-to-deorbit-the-iss-at-the-end-of-its-life/</li>
-      <li>https://www.nasa.gov/image-article/25-years-ago-the-first-pieces-of-the-international-space-station/</li>
-    </ol>
+    <div id="references">
+      <h3>References</h3>
+      <ol style="text-align: start;">
+        <li>https://www.nasa.gov/faqs-the-international-space-station-transition-plan/</li>
+        <li>https://www.nasa.gov/news-release/nasa-selects-international-space-station-us-deorbit-vehicle/</li>
+        <li>https://theconversation.com/nasa-will-say-goodbye-to-the-international-space-station-in-2030</li>
+        <li>https://issnationallab.org/about/iss-national-lab-overview/iss-history-timeline/</li>
+        <li>https://www.forbes.com/sites/quora/2018/10/24/how-difficult-is-it-to-keep-the-space-station-warm/</li>
+        <li>https://www.space.com/37830-jeff-bezos-apollo-rocket-engines-recovery.html</li>
+        <li>https://www.space.com/tiangong-space-station</li>
+        <li>https://www.nasa.gov/humans-in-space/commercial-space/leo-economy</li>
+        <li>https://www.space.com/spacex-dragon-cargo-capsule-boosts-iss</li>
+        <li>https://www.nasa.gov/international-space-station/space-station-facts-and-figures/</li>
+        <li>https://oceanservice.noaa.gov/facts/nemo.html</li>
+        <li>https://spacenews.com/enhanced-dragon-spacecraft-to-deorbit-the-iss-at-the-end-of-its-life/</li>
+        <li>https://www.nasa.gov/image-article/25-years-ago-the-first-pieces-of-the-international-space-station/</li>
+      </ol>
+    </div>
     <div id="last-updated">Loading last update time...</div>
     <button onclick="verifyLastUpdatedTime()" style="display:block;margin:10px auto;padding:8px 16px;">
       Verify Last Modified Time
     </button>
     <p id="totalWordCount"></p>
     <hr>
-    <script>
+    <script id="script">
       // Fetch GitHub last updated time
       async function getLastUpdatedTime() {
         const url = 'https://api.github.com/repos/FEPSFY6700877/FY6700877/commits';
@@ -219,17 +221,18 @@
       // Function to calculate and display word count for a specified section
       function displayWordCount(sectionId, outputId) {
         const text = document.getElementById(sectionId).textContent;
+        console.log(text)
         const wordArray = text.trim().split(/\s+/);
-        const wordCount = wordArray.length;
-        return wordCount;
+        return wordArray.length;
       }
 
       // Function to calculate and display total word count from selected sections
       function displayTotalWordCount() {
-        const IntroductionCount = displayWordCount("Introduction_InText");
-        const AnalysisCount = displayWordCount("Analysis_InText");
+        const FullTextCount = displayWordCount("body");
+        const referencesCount = displayWordCount("references");
+        const scriptCount = displayWordCount("script")
 
-        const totalWordCount = IntroductionCount + AnalysisCount;
+        const totalWordCount = FullTextCount - referencesCount - scriptCount;
         document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
       }
 
