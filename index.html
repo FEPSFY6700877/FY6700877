@@ -80,19 +80,6 @@
       }
     </style>
   </head>
-  <script>
-  function highlightRef(id) {
-    const ref = document.getElementById(id);
-    if (ref) {
-      ref.classList.add('highlight');
-      // Remove highlight after 2 seconds
-      setTimeout(() =>{
-        ref.classList.remove('highlight');
-      }, 2000);
-    }
-  }
-</script>
-
   <body id="body">
     <div style="text-align: center;">
       
@@ -299,5 +286,17 @@ Instead, a controlled re-entry was chosen. The ISS will continue operations unti
         displayTotalWordCount();
       };
     </script>
+    <script>
+  function highlightRef(id) {
+    const ref = document.getElementById(id);
+    if (ref) {
+      ref.classList.add('highlight');
+      // Remove highlight after 2 seconds
+      setTimeout(() =>{
+        ref.classList.remove('highlight');
+      }, 2000);
+    }
+  }
+</script>
   </body>
 </html>
