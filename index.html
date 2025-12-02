@@ -79,11 +79,6 @@
         transition: 0.2s;
       }
       
-      .references p:target {
-        background-color: yellow;
-        transition: background-color 0.5s ease;
-      }
-      
     </style>
   </head>
   <body id="body">
@@ -114,7 +109,7 @@
         This is not the end for human occupied space stations however, as multiple plans internationally have been put forward for newer stations, with one station already in use.
       </p>
         <img src="iss3.jpg" alt="iss3" width="960" height="640">
-      <figcaption><small><i><a href="#Nasa2025" onclick="('Nasa2025')">(NASA, 2025)</a></i></small></figcaption>
+      <figcaption><small><i><a href="#Nasa2025" onclick="markRef('Nasa2025')">(NASA, 2025)</a></i></small></figcaption>
     </div>
     <hr>
     <h3 id="MainArticle">Main Article</h3>
@@ -292,5 +287,14 @@ Instead, a controlled re-entry was chosen. The ISS will continue operations unti
         displayTotalWordCount();
       };
     </script>
+    <script>
+    function markRef(id) {
+  const ref = document.getElementById(id);
+  ref.innerHTML = `<mark>${ref.innerHTML}</mark>`;
+  setTimeout(() => {
+    ref.innerHTML = ref.textContent;   // remove <mark> after 1.5s
+  }, 2000);
+}
+</script>
   </body>
 </html>
