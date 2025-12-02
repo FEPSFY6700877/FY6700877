@@ -287,17 +287,14 @@ Instead, a controlled re-entry was chosen. The ISS will continue operations unti
         displayTotalWordCount();
       };
     </script>
-   <script>
-      function markRef(id) {
-        const ref = document.getElementById(id);
-        if (!ref) return;
-
-        ref.classList.add("ref-highlight");
-
-        setTimeout(() => {
-          ref.classList.remove("ref-highlight");
-        }, 2000);
-      }
-    </script>
+    <script>
+    function markRef(id) {
+  const ref = document.getElementById(id);
+  ref.innerHTML = `<mark>${ref.innerHTML}</mark>`;
+  setTimeout(() => {
+    ref.innerHTML = ref.textContent;   // remove <mark> after 1.5s
+  }, 2000);
+}
+</script>
   </body>
 </html>
