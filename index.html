@@ -114,16 +114,15 @@
       <figcaption><small><i><a href="#NASA2025" onclick="markRef('NASA2025')">(NASA, 2025)</a></i></small></figcaption>
     </div>
     <hr>
-    <div id=textmain>
     <h3 id="MainArticle">Main Article</h3>
     <div>
         <h4>Beginnings and life in orbit</h4>
-        <p>
+        <p id="ptext1">
          The ISS began life during the cold war collaboration between the USA and USSR. Both wanted a manned space station, and neither had the funds to complete it on their own. In November 1998 the first 
           module of the ISS was launched into Low Earth Orbit (LEO). 2 years later, the first humans went aboard the ISS. The European Space Agency, Japan and Canada also aided in constructing the ISS 
           <a href="#ISSNL" onclick="markRef('ISSNL')">(ISS National Laboratory, ND).</a>
         </p>
-        <p> 
+        <p id="ptext2"> 
 The station is invaluable to the scientific community due to its microgravity. LEO allowed for shorter journeys between Earth and the station while also 
           burning up micro meteorites and debris, helping protect the station, although larger debris has struck the station previously adding to repair costs. LEO
           however comes with a challenge - constant temperature change. The ISS’s external temperature can go from 200°C to -200°C, 16 times a day <a href="#NASA2007" onclick="markRef('NASA2007')">(NASA, 2007)</a>. This 
@@ -136,16 +135,16 @@ The station is invaluable to the scientific community due to its microgravity. L
     <hr>
     <div>
         <h4>Plans for decommissioning</h4>
-        <p>
+        <p id="ptext3">
           Decommissioning the ISS is not an easy task. At 110m long and 420 tonnes <a href="#NASA2007" onclick="markRef('NASA2007')">(NASA, 2007)</a>, many plans were put forward on how to decommission the ISS safely and cost effectively. The ISS could not be
           left in its current orbit, as without regularly boosting it would crash into Earth within months on a random re-entry. This would pose a major risk to both other satellites in orbit and the human population on Earth <a href="#NASA2024c" onclick="markRef('NASA2024c')">(NASA, 2024)</a>.
 </p>
-  <p>
+  <p id="ptext4">
 The idea of simply pushing the station into a further orbit was brought forward, with the goal of preserving the station for future use and as a potential museum, but this is unfeasible. It would take a huge 
           amount of fuel using a vehicle akin to SpaceX’s Starship, the largest rocket ever launched, and would leave the station at the mercy of space. It would likely end up breaking apart, leaving 
           debris in orbit and potentially jeopardising future projects: "NASA has estimated that such an impact could permanently degrade or even eliminate access to low Earth orbit for centuries". <a href="#NASA2024c" onclick="markRef('NASA2024c')">(NASA, 2024)</a>. 
         </p>
-        <p>
+        <p id="ptext5">
           Returning the station to Earth piece by piece to be placed in a museum was also considered, however this was deemed too difficult 
           and costly. The ISS was constructed with the help the Space Shuttles, "taking 13 years, 27 flights and 161 extravehicular activities". The last Space Shuttle flight was in 2011, and reactivating the programme 
           would cost an unjustifiable amount of money <a href="#NASA2024c" onclick="markRef('NASA2024c')">(NASA, 2024)</a>.
@@ -212,7 +211,7 @@ Instead, a controlled re-entry was chosen. The ISS will continue operations unti
     <hr>
     <div>
       <h4>Legacy and the future of human presence in space</h4> 
-      <p>
+      <p id="ptext6">
         The idea of a manned space station is not over. In 2021 China started launching modules for its Tiangong space station, which it currently mans <a href="#Tat" onclick="markRef('Tat')">(Tat <i>et al.</i> 2023, p. 2)</a>. NASA has also looked at 
         using private contractors to build a space station, and in 2020 awarded Axiom Space with a contract to build the Axiom space station as early as 2028. The ISS will be used to help 
         build the Axiom before it is released to orbit on its own, thus helping next generation of space stations <a href="#NASA2024a" onclick="markRef('NASA2024a')">(NASA, 2024)</a>.
@@ -226,7 +225,6 @@ Instead, a controlled re-entry was chosen. The ISS will continue operations unti
       <div>
        <img src="axiom.png" alt="axiom" width="534" height="452">
       <figcaption><small><i><a href="#NASA2024a" onclick="markRef('NASA2024a')">Digital rendering of the Axiom Space Station (NASA, 2024)</a></i></small></figcaption>
-    </div>
     </div>
     <hr>
     <div id="Presentation">
@@ -325,9 +323,15 @@ Instead, a controlled re-entry was chosen. The ISS will continue operations unti
   // Function to calculate and display total word count from selected sections
   function displayTotalWordCount() {
     // Calculate word count for each section and accumulate the total
-    const IntroductionCount = displayWordCount("textmain");
+    const ptext1Count = displayWordCount("ptext1");
+    const ptext2Count = displayWordCount("ptext2");
+    const ptext3Count = displayWordCount("ptext3");
+    const ptext4Count = displayWordCount("ptext4");    
+    const ptext5Count = displayWordCount("ptext5");
+    const ptext6Count = displayWordCount("ptext6");
+    
     // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount;
+    const totalWordCount = ptext1Count + ptext2Count + ptext3Count + ptext4Count + ptext5Count + ptext6Count;
     // Display the total word count
     document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }
