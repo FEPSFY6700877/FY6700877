@@ -116,7 +116,7 @@
     <hr>
     <h3 id="MainArticle">Main Article</h3>
     <div>
-        <h4>Beginnings and life in orbit</h4>
+        <h4 id= ttext1>Beginnings and life in orbit</h4>
         <p id="ptext1">
          The ISS began life during the cold war collaboration between the USA and USSR. Both wanted a manned space station, and neither had the funds to complete it on their own. In November 1998 the first 
           module of the ISS was launched into Low Earth Orbit (LEO). 2 years later, the first humans went aboard the ISS. The European Space Agency, Japan and Canada also aided in constructing the ISS 
@@ -134,7 +134,7 @@ The station is invaluable to the scientific community due to its microgravity. L
           <figcaption><small><i><a href="#Luabeya" onclick="markRef('Luabeya')">First two modules of the ISS (Luabeya, 2023)</a></i></small></figcaption>  
     <hr>
     <div>
-        <h4>Plans for decommissioning</h4>
+        <h4 id ="ttext2">Plans for decommissioning</h4>
         <p id="ptext3">
           Decommissioning the ISS is not an easy task. At 110m long and 420 tonnes <a href="#NASA2007" onclick="markRef('NASA2007')">(NASA, 2007)</a>, many plans were put forward on how to decommission the ISS safely and cost effectively. The ISS could not be
           left in its current orbit, as without regularly boosting it would crash into Earth within months on a random re-entry. This would pose a major risk to both other satellites in orbit and the human population on Earth <a href="#NASA2024c" onclick="markRef('NASA2024c')">(NASA, 2024)</a>.
@@ -165,9 +165,9 @@ Instead, a controlled re-entry was chosen. The ISS will continue operations unti
       </div>
     <!-- Plan comparison table -->
     <div>
-      <h4>Plan comparison table</h4>
+      <h4 id="ttext3">Plan comparison table</h4>
     </div>
-    <table>
+    <table id="tabletext">
       <thead>
         <tr>
           <th>Plan</th>
@@ -210,7 +210,7 @@ Instead, a controlled re-entry was chosen. The ISS will continue operations unti
     </table>
     <hr>
     <div>
-      <h4>Legacy and the future of human presence in space</h4> 
+      <h4 id="ttext4">Legacy and the future of human presence in space</h4> 
       <p id="ptext6">
         The idea of a manned space station is not over. In 2021 China started launching modules for its Tiangong space station, which it currently mans <a href="#Tat" onclick="markRef('Tat')">(Tat <i>et al.</i> 2023, p. 2)</a>. NASA has also looked at 
         using private contractors to build a space station, and in 2020 awarded Axiom Space with a contract to build the Axiom space station as early as 2028. The ISS will be used to help 
@@ -329,9 +329,13 @@ Instead, a controlled re-entry was chosen. The ISS will continue operations unti
     const ptext4Count = displayWordCount("ptext4");    
     const ptext5Count = displayWordCount("ptext5");
     const ptext6Count = displayWordCount("ptext6");
-    
+    const ttext1Count = displayWordCount("ttext1");
+    const ttext2Count = displayWordCount("ttext2");
+    const ttext3Count = displayWordCount("ttext3");
+    const ttext4Count = displayWordCount("ttext4");
+    const tabletextCount = displayWordCount("tabletext");
     // Calculate the sum of all selected sections
-    const totalWordCount = ptext1Count + ptext2Count + ptext3Count + ptext4Count + ptext5Count + ptext6Count;
+    const totalWordCount = ptext1Count + ptext2Count + ptext3Count + ptext4Count + ptext5Count + ptext6Count + ttext1Count + ttext2Count + ttext3Count + ttext4Count + tablettextCount;
     // Display the total word count
     document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }
