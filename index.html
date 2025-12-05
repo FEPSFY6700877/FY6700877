@@ -348,7 +348,8 @@ Instead, a controlled re-entry was chosen. The ISS will continue operations unti
 <script>
 function markRef(id) {
   const ref = document.getElementById(id);
-  const originalHTML = ref.innerHTML = '<mark>${originalHTML}</mark>';
+  const originalHTML = ref.innerHTML;
+  ref.innerHTML = '<mark>${originalHTML}</mark>';
   setTimeout(() => {
     ref.innerHTML = originalHTML;
   }, 5000);
