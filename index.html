@@ -345,12 +345,12 @@ Instead, a controlled re-entry was chosen. The ISS will continue operations unti
   // Run the function for specific sections and display total count when the page loads
   window.onload = displayTotalWordCount;
 </script>
-    <script>
-    function markRef(id) {
+<script>
+function markRef(id) {
   const ref = document.getElementById(id);
-  ref.innerHTML = `<mark>${ref.innerHTML}</mark>`;
+  const originalHTML = ref.innerHTML = '<mark>${originalHTML}</mark>';
   setTimeout(() => {
-    ref.innerHTML = ref.textContent; 
+    ref.innerHTML = originalHTML;
   }, 5000);
 }
 </script>
