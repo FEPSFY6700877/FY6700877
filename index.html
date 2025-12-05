@@ -131,7 +131,7 @@ The station is invaluable to the scientific community due to its microgravity. L
         </p      
       </div>
      <img src="issfirst.jpg" alt="issfirst" width="592" height="398">
-          <figcaption><small><i><a href="#Luabeya" onclick="markRef('Luabeya')">First two modules of the ISS (Luabeya, 2023)</a></i></small></figcaption>  
+          <figcaption id="itext1"><small><i><a href="#Luabeya" onclick="markRef('Luabeya')">First two modules of the ISS (Luabeya, 2023)</a></i></small></figcaption>  
     <hr>
     <div>
         <h4 id ="ttext2">Plans for decommissioning</h4>
@@ -156,12 +156,12 @@ Instead, a controlled re-entry was chosen. The ISS will continue operations unti
     
     <div style="width: 50%; float:left; margin-bottom: 50px">
      <img src="spacexboost.jpg" alt="spacexboost" width="510" height="292">
-      <figcaption><small><i><a href="#Foust" onclick="markRef('Foust')">Proposed design for the Deorbit Vehicle (Foust, 2024)</a></i></small></figcaption>
+      <figcaption id="itext2"><small><i><a href="#Foust" onclick="markRef('Foust')">Proposed design for the Deorbit Vehicle (Foust, 2024)</a></i></small></figcaption>
     </div>
 
      <div style="width: 50%; float:right; margin-bottom: 50px">
      <img src="pointnemo.jpg" alt="pointnemo" width="579" height="323">
-      <figcaption><small><i><a href="#NOAA" onclick="markRef('NOAA')">Point Nemo in the Pacific Ocean (NOAA, 2021)</a></i></small></figcaption>
+      <figcaption id="itext3"><small><i><a href="#NOAA" onclick="markRef('NOAA')">Point Nemo in the Pacific Ocean (NOAA, 2021)</a></i></small></figcaption>
       </div>
     <!-- Plan comparison table -->
     <div>
@@ -224,7 +224,7 @@ Instead, a controlled re-entry was chosen. The ISS will continue operations unti
     </div>
       <div>
        <img src="axiom.png" alt="axiom" width="534" height="452">
-      <figcaption><small><i><a href="#NASA2024a" onclick="markRef('NASA2024a')">Digital rendering of the Axiom Space Station (NASA, 2024)</a></i></small></figcaption>
+      <figcaption id="itext4"><small><i><a href="#NASA2024a" onclick="markRef('NASA2024a')">Digital rendering of the Axiom Space Station (NASA, 2024)</a></i></small></figcaption>
     </div>
     <hr>
     <div id="Presentation">
@@ -334,8 +334,12 @@ Instead, a controlled re-entry was chosen. The ISS will continue operations unti
     const ttext3Count = displayWordCount("ttext3");
     const ttext4Count = displayWordCount("ttext4");
     const tabletextCount = displayWordCount("tabletext");
+    const itext1Count = displayWordCount("itext1");
+    const itext2Count = displayWordCount("itext2");
+    const itext3Count = displayWordCount("itext3");
+    const itext4Count = displayWordCount("itext4");
     // Calculate the sum of all selected sections
-    const totalWordCount = ptext1Count + ptext2Count + ptext3Count + ptext4Count + ptext5Count + ptext6Count + ttext1Count + ttext2Count + ttext3Count + ttext4Count + tablettextCount;
+    const totalWordCount = ptext1Count + ptext2Count + ptext3Count + ptext4Count + ptext5Count + ptext6Count + ttext1Count + ttext2Count + ttext3Count + ttext4Count + tablettextCount + itext1Count + itext2Count + itext3Count +itext4Count;
     // Display the total word count
     document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }
