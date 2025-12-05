@@ -113,6 +113,7 @@
       <figcaption><small><i><a href="#NASA2025" onclick="markRef('NASA2025')">(NASA, 2025)</a></i></small></figcaption>
     </div>
     <hr>
+    <div id=textmain>
     <h3 id="MainArticle">Main Article</h3>
     <div id="text1">
         <h4>Beginnings and life in orbit</h4>
@@ -220,6 +221,7 @@ Instead, a controlled re-entry was chosen. The ISS will continue operations unti
 
       </p>
     </div>
+    </div>
     <hr>
     <div id="References">
       <h3>References</h3>
@@ -311,10 +313,9 @@ Instead, a controlled re-entry was chosen. The ISS will continue operations unti
   // Function to calculate and display total word count from selected sections
   function displayTotalWordCount() {
     // Calculate word count for each section and accumulate the total
-    const IntroductionCount = displayWordCount("text1");
-    const AnalysisCount = displayWordCount("text2");
+    const IntroductionCount = displayWordCount("textmain");
     // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + AnalysisCount;
+    const totalWordCount = IntroductionCount;
     // Display the total word count
     document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }
